@@ -48,6 +48,14 @@ class TimecardsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def kill
+    @timecard = Timecard.all
+    @timecard.each do |t|
+    	t.destroy
+    end
+    redirect_to root_path
+  end
 
   private
 

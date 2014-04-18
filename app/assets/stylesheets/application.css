@@ -115,7 +115,7 @@ li a:hover {
 }
 
 #name, #email, #phone, #job, #personal, #date, #timecard, #jobindex, #jobindex, #newtraining, #newjob, 
-#orient, #trainingindex {
+#orient, #trainingindex, #admin {
 	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	text-transform: lowercase;
 }
@@ -139,7 +139,8 @@ li a:hover {
 select {
 	-webkit-appearance: none;
 }
-.myButton, .nextButton, .finiButton, .timeButton, .trainButton, .newlinkButton, .jobButton, .oButton {
+.myButton, .nextButton, .finiButton, .timeButton, .trainButton, .newlinkButton, .jobButton, .oButton,
+.adminButton {
 	background-color:#44c767;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
@@ -151,7 +152,7 @@ select {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
-.cancelButton, .allButton {
+.cancelButton, .allButton, .adminsButton {
 	background-color:red;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
@@ -185,6 +186,12 @@ select {
 .cancelButton {
 	padding:16px 268px;	
 }
+.adminButton {
+	padding:16px 68px;	
+}
+.adminsButton {
+	padding:16px 68px;	
+}
 .allButton {
 	padding:16px 80px;	
 }
@@ -195,7 +202,8 @@ select {
 	padding:16px 60px;	
 }
 .myButton:hover, .nextButton:hover, .finiButton:hover, .timeButton:hover, .cancelButton:hover, 
-.newlinkButton:hover, .jobButton:hover, .allButton:hover, .newlinkButton:hover, .oButton:hover {
+.newlinkButton:hover, .jobButton:hover, .allButton:hover, .newlinkButton:hover, .oButton:hover, 
+.adminButton:hover, .adminsButton:hover {
 	opacity: 0.9;
 }
 input[type=checkbox] {
@@ -212,6 +220,9 @@ input[type=checkbox]:checked + label {
 }
 #days, #times {
 	background-color: white;
+}
+#admin {
+	text-align: center;
 }
 #output {
 	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;		
@@ -255,8 +266,12 @@ input[type=checkbox]:checked + label {
 	border: 1px solid black;
 
 }
+.calendar th {
+	text-align: center;
+}
 .calendar tr {
 	background-color: white;
+	vertical-align: top;
 }
 #cali table { 
 	border: 1px solid white;

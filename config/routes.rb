@@ -1,7 +1,14 @@
 Ops::Application.routes.draw do
 
   get "availability/index"
-  resources :timecards
+  
+  post "home/export"
+  
+resources :timecards, except: [:destroy] do
+ collection do
+   delete :kill
+ end 
+end
 
   resources :orientations
 
@@ -10,7 +17,9 @@ Ops::Application.routes.draw do
   resources :jobs
   
   resources :after_register
+
   get "home/index"
+
   devise_for  :users, :controllers => { :registrations => "registrations" }
   
   # The priority is based upon order of creation: first created -> highest priority.

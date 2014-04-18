@@ -2,15 +2,16 @@
 <div id="timeindex">
     <% @worklogs.each do |worklog| %>
     <h1><%= worklog.checkin_time.strftime("%A, %B %d") %>
-    	<span class="removelink">
+<!--    	<span class="removelink">
 		<%= link_to 'Remove Timecard', worklog, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</span>
+--!>
 	</h1>
     <p>Checked-in <%= worklog.checkin_time.strftime("at %I:%M%p") %><br>
         Checked-out <%= worklog.checkout_time.strftime("at %I:%M%p") %><br>
         <%= worklog.hours %> Hours Worked </p>
     <% end %>
-	<div id="newlink">
-		<%= link_to 'New Timecard', new_timecard_path, :class=>"newlinkButton" %>
-	</div>
+		<div id="newlink">
+			<%= link_to 'New Timecard', new_timecard_path, :class=>"newlinkButton" %>
+		</div>	
 </div>

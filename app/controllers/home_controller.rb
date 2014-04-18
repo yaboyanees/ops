@@ -15,5 +15,11 @@ class HomeController < ApplicationController
       format.html { render :layout => false }
     end
  end
-
+  def kill
+    @timecard = Timecard.all
+    @timecard.each do |t|
+    	t.destroy
+    end
+    redirect_to root_path
+  end
 end

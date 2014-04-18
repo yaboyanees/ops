@@ -1,1 +1,12 @@
-todo
+<style>
+table, tr, td, th {border: 1px solid black; vertical-align:top;}
+td {font-size: 13px; text-align:left;}
+table {width: 100%;}
+</style>
+<div id="cali">
+	<%= calendar @timecards, :start_day => :monday do |timecard| %>
+ 		<%= timecard.fullname %>
+ 		<%= timecard.hours %> hours
+ 	<br>
+	<% end %>
+</div>	

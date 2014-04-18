@@ -1,0 +1,183 @@
+<title>Availability Page</title>
+<div id="avail">
+<table>
+	<tr class="dayframe">
+		<th></th>
+		<th>MONDAY</th>
+		<th>TUESDAY</th>
+		<th>WEDNESDAY</th>
+		<th>THURSDAY</th>
+		<th>FRIDAY</th>
+		<th>SATURDAY</th>
+		<th>SUNDAY</th>
+	</tr>
+
+		<tr class="timeframe">
+		<th>morning</th>
+		</tr>
+	<% @users.each do |user|%>
+	<tr>
+	<td></td>
+			<% if user.mmor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>
+			
+			<% if user.tmor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  	
+			
+			<% if user.wmor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %> 
+			
+			<% if user.thmor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  	
+			
+			<% if user.fmor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  		
+			
+			<% if user.smor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  	
+			
+			<% if user.sumor %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+			<% else %>
+				<td></td>
+			<% end %>
+		</tr>	
+	<% end %>
+
+
+	<tr>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+		<tr class="timeframe">
+		<th>afternoon</th>
+	<% @users.each do |user|%>
+	<tr>
+	<td></td>
+			<% if user.maft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>
+			<% if user.taft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  				
+			<% if user.waft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  				
+			<% if user.thaft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  				
+			<% if user.faft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  				
+			<% if user.saft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  				
+			<% if user.suaft %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+			<% else %>
+				<td></td>
+			<% end %>
+		</tr>
+		
+	<% end %>
+
+	<tr>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+		<tr class="timeframe">
+		<th>evening</th>
+		</tr>
+	<% @users.each do |user|%>
+			<% if user.meve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>
+			
+			<% if user.teve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %> 
+			
+			<% if user.weve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  	
+			
+			<% if user.theve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  	
+			
+			<% if user.feve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  		
+			
+			<% if user.seve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+  			<% else %>
+  				<td></td>
+			<% end %>  		
+			
+			<% if user.sueve %>
+  				<td><%= user.fullname %><br><%= user.phone_number %></td>
+			<% else %>
+				<td></td>
+			<% end %>
+		</tr>
+		
+	<% end %>
+</table>
+</div>
+	
+

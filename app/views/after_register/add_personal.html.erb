@@ -1,0 +1,17 @@
+<%= form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+
+<div id="personal">
+	<h2>Enter your Name</h2>
+
+	<div id="name">
+  		<%= f.label "First" %><br>
+  		<%= f.text_field :first_name, :placeholder => "ops" %><br>
+  		<%= f.label "Last" %><br>
+  		<%= f.text_field :last_name, :placeholder => "volunteer" %><br>
+	</div><br>
+		<div id="next">
+  			<%= f.submit 'Next', :class =>"nextButton" %>
+		</div>
+</div>
+
+<% end %>

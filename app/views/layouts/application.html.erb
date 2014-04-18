@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag "favicon.ico" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div id="navi">
+		<section id="left">
+		<%= image_tag('logo.png') %>
+		</section>
+			<% if user_signed_in? && current_user.admin.present? %>
+				<section id="middle">
+				<ul id="links">
+					<li><span class="link1"><%= link_to "Home", root_path %></span></li>
+					<li><%= link_to "Jobs", new_job_path %></li>
+					<li><%= link_to "Training", new_training_path %></li>
+					<li><%= link_to "Orientation", new_orientation_path %></li>
+				</ul>
+				</section>
+			<% elsif user_signed_in? && current_user.admin.blank? && current_user.orientation_id.present? %>
+				<section id="middle">
+					<ul id="links">
+						<li><%= link_to "Home", root_path %></li>
+						<li><%= link_to "Timecards", new_timecard_path %></li>
+					</ul>
+				</section>
+			<% else %>
+			<section id="middle">
+				<h2>OPS Volunteer Management System</h2>
+			</section>
+			<% end %>
+
+		<% if user_signed_in? && current_user.first_name.present? %>
+			<section id="right">
+				<p><%= current_user.fullname %> <%= link_to image_tag('logout.png'), destroy_user_session_path, :method => :delete %></p>
+			</section>
+		<% else %>		
+			<section id="middle">
+				<h2>OPS Volunteer Management System</h2>
+			</section>
+			<section id="right">
+				<p><%= link_to image_tag('signup.png'), new_user_registration_path %> or <%= link_to image_tag('login.png'), new_user_session_path %></p>
+			</section>
+			<% end %>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<%= form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+	<div id="date">
+		<%= f.label "days available" %> <br />
+		<div id="days"> 			
+			<input type="checkbox" id="user_m" name="user[m]"> 
+			<label for="user_m">Monday</label>
+			<input type="checkbox" id="user_t" name="user[t]"> 
+			<label for="user_t">Tuesday</label>
+			<input type="checkbox" id="user_w" name="user[w]"> 
+			<label for="user_w">Wednesday</label>
+			<input type="checkbox" id="user_th" name="user[th]">
+			<label for="user_th">Thursday</label><br> 		
+			<input type="checkbox" id="user_f" name="user[f]"> 
+			<label for="user_f">Friday</label>
+			<input type="checkbox" id="user_s" name="user[s]"> 
+			<label for="user_s">Saturday</label>
+			<input type="checkbox" id="user_su" name="user[su]"> 
+			<label for="user_su">Sunday</label>	
+  		</div><br>
+  		
+  		<%= f.label "shift available" %><br>
+  		<div id="times"> 		
+			<input type="checkbox" id="user_mor" name="user[mor]"> 
+			<label for="user_mor">Morning</label>				
+			<input type="checkbox" id="user_aft" name="user[aft]"> 
+			<label for="user_aft">Afternoon</label>	
+			<input type="checkbox" id="user_eve" name="user[eve]"> 
+			<label for="user_eve">Evening</label>				
+  			<br>
+  		</div><br>
+  		<div id="odate">
+  			<%= f.label "orientation date" %><br />
+  			<%= f.collection_select :orientation_id, Orientation.all, :id, :orientationdate, :prompt => '' %><br /> 
+		</div><br>
+		<div id="finish">
+  			<%= f.submit 'Finish', :class =>"finiButton" %>
+  		</div>
+  </div>
+  
+<% end %>

@@ -1,0 +1,13 @@
+<title>OPS | Job Listing</title>
+<div id="jobindex">
+	<% @jobs.each do |job| %>
+		<h1><%= link_to job.job_name, edit_job_path(job) %><span class="removelink"><%= link_to 'Remove Job', job, method: :delete, data: { confirm: 'Are you sure?' } %></span></h1>
+		
+        	<p><%= job.description %><br>
+        	must complete <%= job.tname %></p><br>
+	<% end %>
+	<div id="newlink">
+  	 	<p><%= link_to 'New Job', new_job_path, :class=>"newlinkButton" %></p>
+	</div>
+</div>
+

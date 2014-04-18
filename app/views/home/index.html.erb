@@ -1,0 +1,68 @@
+<title>OPS | Homepage</title>
+	
+<% if user_signed_in? && current_user.admin.present? %> 
+<%= link_to "Availability", availability_index_path %>
+	<div id="cali">
+		<%= calendar @timecards, :start_day => :monday, :prev_text=>"< ", :next_text=>" >" do |timecard| %>
+ 			<%= timecard.fullname %>: <%= timecard.hours %> hrs
+		<% end %>
+	</div>		
+			<% elsif user_signed_in?  %>
+				<div id="output">
+					<p>You are Helping as a <%= current_user.job_name %><br>
+					<% if current_user.odate > Date.today %>
+						You Attended Orientaton on <%= current_user.orientationdate %></p>
+							<% @worklogs.each do |worklog| %>
+							<p class="timeroll"><%= worklog.checkinday %> 
+							<span class="timemid"><%= worklog.timeline %></span>
+							<span class="timeright">Worked: <%= worklog.hours %> hrs</span></p>
+							<% end %>
+					<% else %>
+						Your Orientation Date is on <%= current_user.orientationdate %><br>
+					<% end %>
+				</div>
+			<% else %>
+				<div id="regform">
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>	 	
+ 	 			<h2>Want to Volunteer?</h2>
+ 	 				<div id="email">
+ 	 	   				<%= f.label :email %><br>
+  		  	 			<%= f.email_field :email, :size => 27, :placeholder => "ops.become@volunteer.com" %>
+  					</div>
+  					<div id="phone">
+  					 	<%= f.label "Phone" %><br>
+ 			 			<%= f.telephone_field :phone_number, :size => 11, :placeholder => "254-555-5555", 
+ 			 			:maxlength => 12 %>
+			 			<%= f.hidden_field :password, :value => "volunteer" %>
+					</div>
+					<div id="job">
+		   				<%= f.label "how can you help?" %><br />
+		   				<%= f.collection_select :job_id, Job.all, :id, :job_name, :prompt => '' %><br />
+					</div>
+					<div id="register">
+  						<p><%= f.submit "join", :class=>"myButton" %></p>
+  					</div>
+			<% end %>	
+			</div>
+	<div id="logform">
+	<h2>Already a Volunteer?</h2>
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>   
+ 	 	<div id="email">
+ 	 	   <%= f.label :email %><br>
+  		   <%= f.email_field :email, :size => 27%>
+  		</div>
+
+  		<div id="phone">
+  			 <%= f.label "Phone" %><br>
+ 			 <%= f.telephone_field :phone_number, :maxlength => 12 %>
+			 <%= f.hidden_field :password, :value => "volunteer" %>
+		</div>
+  		
+  		<div id="login">
+  			<p><%= f.submit "login", :class=>"myButton" %></p>
+  		</div>
+		<% end %>
+	</div>
+<% end %>
+
+

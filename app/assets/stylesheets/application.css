@@ -1,0 +1,309 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	background-color: #4fb9ff;
+	margin: 0 auto;
+}
+
+#navi {
+	background-color: #202020;
+	height: 110px;
+	width: 100%;
+	overflow: hidden;
+}
+
+#left {
+	float: left;
+	padding: 5px 0 0 25px;
+}
+#middle {
+	float: left;
+}
+#middle h2 {
+	color: white;
+	font: 50px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	margin: 20px 0 0 40px;
+}
+h1 {
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	padding-left: 10px;
+	margin: 0 auto;
+	background-color: white;
+	text-transform: none;
+}
+h1 a {
+	text-decoration: none;
+}
+#right {
+	float: right;
+}
+#right p {
+	color: white;
+	font: 30px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	padding-right: 10px;
+}
+
+#links {
+	float: right;
+	list-style-type: none;
+}
+
+ul {
+	margin: 33px 0 0 45px;
+}
+
+li {
+	display: inline;
+}
+
+li a {
+	text-decoration: none;
+	font: 45px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	color: black;
+	padding: 0 10px 0 10px;
+	background-color: white;
+	border-radius: 5px;
+}
+li a:hover {
+	opacity: 0.8;
+}
+
+#regform {
+	float: left;
+	margin: 20px 0 0 40px;
+	padding-right: 100px;
+	border-right: 3px dotted white;
+}
+#logform {
+	float: right;
+	margin: 20px 40px 0 0;
+}
+#regformsep, #logformsep {
+	margin-left: 385px;
+}
+#timecard {
+	margin-left: 330px;
+}
+#orient {
+	margin-left: 285px;
+}
+#jobindex {
+	padding-bottom: 10px;
+}
+#timeindex {
+	padding-bottom: 10px;
+}
+#trainingindex {
+	padding-bottom: 10px;
+}
+#regform h2, #logform h2, #personal h2, #date h2, h2  {
+	font: 50px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#name, #email, #phone, #job, #personal, #date, #timecard, #jobindex, #jobindex, #newtraining, #newjob, 
+#orient, #trainingindex {
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	text-transform: lowercase;
+}
+
+#name  {
+	margin-left: 448px;
+}
+#date {
+	margin: 0 318px 0 307px;
+}
+
+#next {
+	text-align: center;
+}
+
+#email input, #phone input, #job select, #login input, #register input, #personal input, #date input, 
+#odate select, #timecard input, #timecard select, #newjob input, #newjob select, #newjob textarea,
+#newtraining input, #newtraining select, #orient select, #orient input {
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+select {
+	-webkit-appearance: none;
+}
+.myButton, .nextButton, .finiButton, .timeButton, .trainButton, .newlinkButton, .jobButton, .oButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:3px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.cancelButton, .allButton {
+	background-color:red;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:3px;
+	border:1px solid #cc0000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+.myButton {
+	padding:16px 203px;	
+}
+.timeButton {
+	padding:16px 222px;	
+}
+.trainButton {
+	padding:16px 196px;	
+}
+.nextButton {
+	padding:16px 148px;	
+}
+.finiButton {
+	padding:16px 280px;	
+}
+.oButton {
+	padding:16px 240px;	
+}
+.cancelButton {
+	padding:16px 268px;	
+}
+.allButton {
+	padding:16px 80px;	
+}
+.newlinkButton {
+	padding:16px 200px;	
+}
+.jobButton {
+	padding:16px 60px;	
+}
+.myButton:hover, .nextButton:hover, .finiButton:hover, .timeButton:hover, .cancelButton:hover, 
+.newlinkButton:hover, .jobButton:hover, .allButton:hover, .newlinkButton:hover, .oButton:hover {
+	opacity: 0.9;
+}
+input[type=checkbox] {
+  display:none;
+} 
+input[type=checkbox] + label {
+  color: red;
+  margin: 0px;
+  cursor: pointer;
+} 
+input[type=checkbox]:checked + label {
+  color: green;
+  text-decoration: none;
+}
+#days, #times {
+	background-color: white;
+}
+#output {
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;		
+}
+#output p {
+	margin: 0 auto;
+	padding-left: 10px;
+}
+#jobindex p {
+	margin: 0 auto;
+	padding-left: 20px;
+}
+#trainingindex p {
+	margin: 0 auto;
+	padding-left: 20px;
+}
+#timeindex p {
+	margin: 0 auto;
+	padding-left: 20px;
+	font: 25px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;	
+}
+#newlink {
+	text-align: center;
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;	
+}
+.removelink {
+	float: right;
+	padding-right: 15px;
+}
+#newjob {
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;	
+	margin-left: 310px;
+}
+#newtraining {
+	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;	
+	margin-left: 350px;
+}
+.calendar td { 
+	height: 150px;  
+	width: 14.28%;
+	border: 1px solid black;
+
+}
+.calendar tr {
+	background-color: white;
+}
+#cali table { 
+	border: 1px solid white;
+	width: 100%;
+}
+.day_number {
+	margin: 0 auto;
+}
+#cali {
+	margin: 0 auto;
+}
+tr.current-week.week {
+	background-color: #fffb6d;
+}
+.timeroll:nth-child(odd)
+{
+background-color: black;
+color: white;
+}
+.timeroll:nth-child(even)
+{
+background-color: white;
+} 
+.timeright {
+	float: right;
+	padding-right: 10px;
+}
+.timemid {
+	padding-left: 300px;
+}
+#avail table {
+	border-collapse:collapse;
+	width: 100%;
+	border: none;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;	
+}
+#avail tr {
+}
+#avail td, th {
+	text-align: left;
+	font-size: 18px;
+}
+#avail tr {
+}
+.timeframe {
+	border-top: 1px dotted white;
+}
+.dayframe {
+	background-color: white;
+}

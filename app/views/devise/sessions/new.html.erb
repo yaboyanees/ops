@@ -1,0 +1,20 @@
+<title>OPS | Login</title>
+<h2>Already a Volunteer?</h2>
+	<div id="logformsep">
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>   
+ 	 	<div id="email">
+ 	 	   <%= f.label :email %><br>
+  		   <%= f.email_field :email, :size => 27%>
+  		</div>
+
+  		<div id="phone">
+  			 <%= f.label "Phone" %><br>
+ 			 <%= f.telephone_field :phone_number, :maxlength => 12 %>
+			 <%= f.hidden_field :password, :value => "volunteer" %>
+		</div>
+  		
+  		<div id="login">
+  			<p><%= f.submit "login", :class=>"myButton" %></p>
+  		</div>
+		<% end %>
+	</div>

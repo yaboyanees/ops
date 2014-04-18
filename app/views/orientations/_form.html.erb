@@ -1,0 +1,12 @@
+<%= form_for(@orientation) do |f| %>
+<div id="orient">
+    <%= f.label "Orientation Date" %><br>
+    <%= f.datetime_select :orientation_date, :default => DateTime.now, :minute_step => 30 %>
+  	<div id="osubmit">
+  		<p><%= f.submit "Add Date", :class=>"oButton" %></p>
+  	</div>
+  	 <div id="cancel">
+  	 	<p><%= link_to 'Cancel', orientations_path, :class=>"cancelButton" %></p>
+  	</div>
+<% end %>
+</div>

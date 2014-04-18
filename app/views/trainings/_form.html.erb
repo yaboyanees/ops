@@ -1,0 +1,14 @@
+<%= form_for(@training) do |f| %>
+<div id="newtraining">
+    <%= f.label :name, "training course" %><br>
+	<%= f.text_field :name %><br>
+	<%= f.label :certification_date, "course date" %><br>
+	<%= f.date_select :certification_date %>
+  	<div id="create">
+  		<p><%= f.submit "Create Training", :class=>"trainButton" %></p>
+  	</div>
+  	 <div id="cancel">
+  	 	<p><%= link_to 'Cancel', trainings_path, :class=>"cancelButton" %></p>
+  	</div>
+</div>
+<% end %>

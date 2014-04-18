@@ -1,0 +1,18 @@
+<div id="newjob">
+	<%= form_for(@job) do |f| %>
+
+  	<div id="jobname">
+   		<%= f.label :name, "job name" %><br>
+   		<%= f.text_field :name %>
+  	</div>
+  	<div id="decription">
+    	<%= f.label :description %><br>
+    	<%= f.text_area :description, :size => "34x4" %>
+  	</div>
+    	<%= f.label "training required" %><br />
+  		<%= f.collection_select :training_id, Training.all, :id, :tname, :prompt => '' %>
+  	<div id="jobsubmit">
+    	<p><%= f.submit "Create Job", :class=>"jobButton" %><%= link_to 'All Jobs', jobs_path, :class=>"allButton" %></p>
+  	</div>  
+	<% end %>
+</div>

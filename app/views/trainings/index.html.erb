@@ -1,0 +1,14 @@
+<title>OPS | Timecards</title>
+<div id="trainingindex">
+<% @trainings.each do |training| %>
+	<h1><%= link_to training.tname, edit_training_path(training) %>
+		<span class="removelink">
+		<%= link_to 'Remove Training', training, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</span>
+	</h1>        	
+	<p><%= training.tdate %></p><br>
+<% end %>
+	<div id="newlink">
+  	 	<p><%= link_to 'New Training', new_training_path, :class=>"newlinkButton" %></p>
+	</div>
+</div>

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   	@users = User.find(:all)	
   	@timecards = Timecard.find(:all, :conditions => "user_id", :order => "checkin_time ASC")
   	@worklogs = Timecard.find(:all, :conditions => {:user_id=>current_user}, :order => "checkin_time ASC")
+	@jobs = Job.find(:all, :conditions =>"id") 
   end
  def export
   	@users = User.find(:all)	

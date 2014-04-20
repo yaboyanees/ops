@@ -13,5 +13,12 @@ class Job < ActiveRecord::Base
     "#{training.name.titleize}"
     end
 
+	def tdate
+    "#{training.certification_date.strftime("%A, %B %d")}"
+    end
+    
+	def tcheckdate
+    training.certification_date
+    end
 
 end

@@ -14,7 +14,7 @@
 			<% elsif user_signed_in?  %>
 				<div id="output">
 					<p>You are Helping as a <%= current_user.job_name %><br>
-					<% if current_user.odate > Date.today %>
+					<% if current_user.odate < Date.today %>
 						You Attended Orientaton on <%= current_user.orientationdate %></p>
 							<% @worklogs.each do |worklog| %>
 							<p class="timeroll"><%= worklog.checkinday %> 
@@ -24,6 +24,16 @@
 					<% else %>
 						Your Orientation Date is on <%= current_user.orientationdate %><br>
 					<% end %>
+					<% @jobs.each do |job| %>
+  						<% if job.tcheckdate < Date.today && current_user.job_id == job.id %> 
+  					  	<p>You Completed <%= job.tname %> on <%= job.tdate %></p>
+  						<% else %>
+  						  	<% if current_user.job_id == job.id %>
+  							<p>You Must Complete the <%= job.tname %> on <%= job.tdate %></p>
+  							<% else %>
+  							<% end %>
+  						<% end %>
+  					<% end %>
 				</div>
 			<% else %>
 				<div id="regform">

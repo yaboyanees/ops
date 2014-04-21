@@ -4,11 +4,12 @@
 	<div id="cali">
 		<%= calendar @timecards, :start_day => :monday, :prev_text=>"< ", :next_text=>" >" do |timecard| %>
  			<%= timecard.fullname %>: <%= timecard.hours %> hrs
+ 			<br>
 		<% end %>
 	</div>	
 	<div id="admin">
 		<p><%= link_to "Availability", availability_index_path, :class=>"adminButton" %>
-			<%= link_to 'Export Report', home_export_url, :class=>"adminButton" %>
+			<%= link_to 'Export Report', home_export_path, :class=>"adminButton" %>
 			<%= link_to 'Delete Timecards', kill_timecards_path, :class=>"adminsButton", :method => :delete, :confirm => "CLICK OK IF YOU HAVE EXPORTED! THIS IS NOT REVERSABLE" %></p>
 	</div>
 			<% elsif user_signed_in?  %>
@@ -16,11 +17,6 @@
 					<p>You are Helping as a <%= current_user.job_name %><br>
 					<% if current_user.odate < Date.today %>
 						You Attended Orientaton on <%= current_user.orientationdate %></p>
-							<% @worklogs.each do |worklog| %>
-							<p class="timeroll"><%= worklog.checkinday %> 
-							<span class="timemid"><%= worklog.timeline %></span>
-							<span class="timeright">Worked: <%= worklog.hours %> hrs</span></p>
-							<% end %>
 					<% else %>
 						Your Orientation Date is on <%= current_user.orientationdate %><br>
 					<% end %>
@@ -34,6 +30,11 @@
   							<% end %>
   						<% end %>
   					<% end %>
+  					<% @worklogs.each do |worklog| %>
+					<p class="timeroll"><%= worklog.checkinday %> 
+					<span class="timemid"><%= worklog.timeline %></span>
+					<span class="timeright">Worked: <%= worklog.hours %> hrs</span></p>
+					<% end %>
 				</div>
 			<% else %>
 				<div id="regform">

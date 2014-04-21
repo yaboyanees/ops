@@ -3,7 +3,7 @@ class TimecardsController < ApplicationController
   before_action :set_timecard, only: [:edit, :update, :destroy]
 
   def index
-    @timecards = Timecard.find(:all, :conditions => "user_id", :order => "checkin_time ASC")
+    @timecards = Timecard.find(:all, :conditions => "user_id", :order => "checkin_time DESC")
     @worklogs = Timecard.find_all_by_user_id(current_user)
   end
 

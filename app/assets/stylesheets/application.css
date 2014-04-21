@@ -288,7 +288,7 @@ tr.current-week.week {
 }
 .timeroll:nth-child(odd)
 {
-background-color: black;
+background-color: #202020;
 color: white;
 }
 .timeroll:nth-child(even)

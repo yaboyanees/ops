@@ -131,8 +131,9 @@
 
 		<tr class="timeframe">
 		<th>evening</th>
+			<% @users.each do |user|%>
 		</tr>
-	<% @users.each do |user|%>
+		<td></td>
 			<% if user.meve %>
   				<td><%= user.fullname %><br><%= user.phone_number %></td>
   			<% else %>

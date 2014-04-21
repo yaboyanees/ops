@@ -2,7 +2,8 @@ Ops::Application.routes.draw do
 
   get "availability/index"
   
-  post "home/export"
+  get "home/index"
+  get "home/export"
   
 resources :timecards, except: [:destroy] do
  collection do
@@ -17,8 +18,6 @@ end
   resources :jobs
   
   resources :after_register
-
-  get "home/index"
 
   devise_for  :users, :controllers => { :registrations => "registrations" }
   

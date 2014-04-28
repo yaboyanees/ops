@@ -4,13 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
-group :development do
+group :development, :test do
   gem 'sqlite3'
 end
-
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  gem 'thin'
 end
 
 
@@ -56,3 +55,4 @@ gem 'devise'
 gem 'wicked'
 gem 'simple_calendar'
 gem 'to_xls-rails'
+gem 'rails_12factor', group: :production

@@ -3,7 +3,7 @@ class TrainingsController < ApplicationController
   before_action :set_training, only: [:edit, :update, :destroy]
 
   def index
-    @trainings = Training.all
+    @trainings = Training.find(:all)
   end
 
   def show

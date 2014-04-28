@@ -3,8 +3,8 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:edit, :update, :destroy]
 
   def index
-    @jobs = Job.all
-    @trainings = Training.all
+    @jobs = Job.find(:all)
+    @trainings = Training.find(:all)
   end
 
   def new

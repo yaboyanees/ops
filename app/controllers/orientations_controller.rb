@@ -3,7 +3,7 @@ class OrientationsController < ApplicationController
   before_action :set_orientation, only: [:edit, :update, :destroy]
 
   def index
-    @orientations = Orientation.all
+    @orientations = Orientation.find(:all)
   end
 
   def new

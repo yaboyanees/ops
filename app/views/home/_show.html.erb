@@ -6,7 +6,7 @@ table {width: 100%;}
 <div id="cali">
 	<%= calendar @timecards, :start_day => :monday do |timecard| %>
  		<%= timecard.fullname %>
- 		<%= timecard.hours %> hours
+ 		<br><%= timecard.hours %>
  	<br>
 	<% end %>
 </div>	

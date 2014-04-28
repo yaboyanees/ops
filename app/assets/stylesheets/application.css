@@ -219,7 +219,6 @@ input[type=checkbox]:checked + label {
   text-decoration: none;
 }
 #days, #times {
-	background-color: white;
 }
 #admin {
 	text-align: center;

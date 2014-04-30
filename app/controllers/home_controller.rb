@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   def index
   	@users = User.find(:all)	
-  	@timecards = Timecard.find(:all, :conditions => "user_id", :order => "checkin_time ASC")
-  	@worklogs = Timecard.find(:all, :conditions => {:user_id=>current_user}, :order => "checkin_time ASC")
+  	@timecards = Timecard.find(:all, :order => "checkin_time ASC")
+  	@worklogs = Timecard.where(user_id: current_user).order(:checkin_time)
 	@jobs = Job.find(:all, :conditions =>"id") 
   end
  def export

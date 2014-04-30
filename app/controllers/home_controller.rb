@@ -3,12 +3,12 @@ class HomeController < ApplicationController
   	@users = User.find(:all)	
   	@timecards = Timecard.find(:all, :order => "checkin_time ASC")
   	@worklogs = Timecard.where(user_id: current_user).order(:checkin_time)
-	@jobs = Job.find(:all, :conditions =>"id") 
+	@jobs = Job.find(:all) 
   end
  def export
   	@users = User.find(:all)	
-  	@timecards = Timecard.find(:all, :conditions => "user_id", :order => "checkin_time ASC")
-  	@worklogs = Timecard.find(:all, :conditions => {:user_id=>current_user}, :order => "checkin_time ASC")
+  	@timecards = Timecard.find(:all, :order => "checkin_time ASC")
+  	@worklogs = Timecard.where(user_id: current_user).order(:checkin_time)
     headers['Content-Type'] = "application/vnd.ms-excel"
     headers['Content-Disposition'] = 'attachment; filename="Timecard Report.xls"'
     headers['Cache-Control'] = ''
@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     end
  end
   def kill
-    @timecard = Timecard.all
+    @timecard = Timecard.find(:all)
     @timecard.each do |t|
     	t.destroy
     end

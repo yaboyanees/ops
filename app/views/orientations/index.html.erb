@@ -1,11 +1,9 @@
 <title>OPS | Orientations</title>
-    <% @orientations.each do |orientation| %>
-        <%= link_to orientation.orientationdate, edit_orientation_path(orientation) %><br>
-
-        <%= link_to 'Destroy', orientation, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-        <br>
-    <% end %>
-
-<br>
-
-<%= link_to 'New Orientation', new_orientation_path %>
+<div id="oindex">
+    <% @orientations.each do |orientation| %>		
+        <h1><%= orientation.orientationdate %><span class="removelink"><%= link_to 'Remove Orientation', orientation, method: :delete, data: { confirm: 'Are you sure?' } %></span></h1>
+	<% end %>
+	<div id="newlink">
+  	 	<p><%= link_to 'New Orientation', new_orientation_path, :class=>"newlinkButton" %></p>
+	</div>
+</div>

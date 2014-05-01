@@ -321,3 +321,12 @@ background-color: white;
 .dayframe {
 	background-color: white;
 }
+#oindex h1:nth-child(even)
+{
+background-color: #202020;
+color: white;
+}
+#oindex h1:nth-child(odd)
+{
+background-color: white;
+} 

@@ -32,6 +32,9 @@
 			<section id="middle">
 				<h2>OPS Volunteer Management System</h2>
 			</section>
+			<section id="right">
+				<p><%= link_to image_tag('signup.png'), new_user_registration_path %> or <%= link_to image_tag('login.png'), new_user_session_path %></p>
+			</section>
 			<% end %>
 
 		<% if user_signed_in? && current_user.first_name.present? %>
@@ -41,9 +44,6 @@
 		<% else %>		
 			<section id="middle">
 				<h2>OPS Volunteer Management System</h2>
-			</section>
-			<section id="right">
-				<p><%= link_to image_tag('signup.png'), new_user_registration_path %> or <%= link_to image_tag('login.png'), new_user_session_path %></p>
 			</section>
 			<% end %>
 	</div>

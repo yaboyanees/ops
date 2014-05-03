@@ -19,4 +19,4 @@
 # Training.create(:id => "2", :name => "food handler course", :certification_date => "2014-04-22")
 # Training.create(:id => "3", :name => "no training", :certification_date => "2014-05-22")
 
-User.create(:id => "1", :email => "admin@ops.com", :password => "volunteer", :first_name => "Anees", :last_name => "Merzi", :phone_number => "254-595-5555", :admin => "t" )
+User.create(:email => "admin@ops.com", :password => "volunteer", :first_name => "Anees", :last_name => "Merzi", :phone_number => "254-595-5555", :admin => "t" )

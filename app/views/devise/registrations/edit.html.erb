@@ -1,7 +1,5 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
 	<%= f.label "How You Can Help" %><br />
 	<%= f.collection_select :job_id, Job.all, :id, :name, :prompt => 'Change Job' %><br />
 	<%= f.hidden_field :current_password, :value => "volunteer" %>

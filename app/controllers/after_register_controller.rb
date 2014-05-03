@@ -17,7 +17,7 @@ class AfterRegisterController < ApplicationController
     @user.update_attributes(user_params)
     render_wizard @user
   end
-  
+
 end
 
 

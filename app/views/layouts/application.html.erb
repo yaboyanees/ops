@@ -16,9 +16,9 @@
 				<section id="middle">
 				<ul id="links">
 					<li><span class="link1"><%= link_to "Home", root_path %></span></li>
-					<li><%= link_to "Jobs", new_job_path %></li>
-					<li><%= link_to "Training", new_training_path %></li>
 					<li><%= link_to "Orientation", new_orientation_path %></li>
+					<li><%= link_to "Training", new_training_path %></li>
+					<li><%= link_to "Jobs", new_job_path %></li>	
 				</ul>
 				</section>
 			<% elsif user_signed_in? && current_user.admin.blank? && current_user.orientation_id.present? %>

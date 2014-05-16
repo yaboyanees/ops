@@ -18,7 +18,7 @@
 					<% if current_user.odate < Date.today %>
 						You Attended Orientaton on <%= current_user.orientationdate %></p>
 					<% else %>
-						Your Orientation Date is on <%= current_user.orientationdate %><br>
+						You must attend Orientation on <%= current_user.orientationdate %><br>
 					<% end %>
 					<% @jobs.each do |job| %>
   						<% if job.tcheckdate < Date.today && current_user.job_id == job.id %> 

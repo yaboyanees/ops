@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 	belongs_to :orientation
 	belongs_to :training
 	belongs_to :timecard
+	
+	validates :phone_number, presence: true, uniqueness: true
   	
 	def fullname
 		"#{first_name.titleize}" " " "#{last_name.titleize}"

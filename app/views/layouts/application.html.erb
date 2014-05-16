@@ -24,8 +24,12 @@
 			<% elsif user_signed_in? && current_user.admin.blank? && current_user.orientation_id.present? %>
 				<section id="middle">
 					<ul id="links">
-						<li><%= link_to "Home", root_path %></li>
-						<li><%= link_to "Timecards", new_timecard_path %></li>
+						<% if current_user.odate < Date.today %>
+							<li><%= link_to "Home", root_path %></li>
+							<li><%= link_to "Timecards", new_timecard_path %></li>
+						<% else %>
+							<li><%= link_to "Home", root_path %></li>
+						<% end %>
 					</ul>
 				</section>
 			<% else %>

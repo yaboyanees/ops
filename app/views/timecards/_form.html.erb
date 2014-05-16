@@ -1,12 +1,9 @@
 <%= form_for(@timecard) do |f| %>
 <div id="timecard">
-	<% if @timecard.checkin_time.blank? %>
-   		<%= f.label "Check-in:" %><br>
-    	<%= f.datetime_select :checkin_time, :default => DateTime.now, :minute_step => 15 %><br>
-	<% else %>
-    	<%= f.label "Check-out:" %><br>
-    	<%= f.datetime_select :checkout_time, :default => DateTime.now, :minute_step => 15 %><br>
-	<% end %>
+   	<%= f.label "Check-in:" %><br>
+    <%= f.datetime_select :checkin_time, :default => DateTime.now, :minute_step => 15 %><br>
+    <%= f.label "Check-out:" %><br>
+    <%= f.datetime_select :checkout_time, :default => DateTime.now, :minute_step => 15 %><br>
   <div id="create">
   	<p><%= f.submit "Punch Card", :class=>"timeButton", :confirm => "Punch Timecard?" %></p>
   </div>

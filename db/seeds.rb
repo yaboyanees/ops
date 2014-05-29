@@ -17,4 +17,4 @@
 # Training.create(:name => "computer training", :certification_date => "2014-03-22")
 # Training.create(:name => "food handler course", :certification_date => "2014-04-22")
 # Training.create(:name => "no training", :certification_date => "2014-05-22")
-User.create(:email => "admin@ops.com", :password => "volunteer", :first_name => "Anees", :last_name => "Merzi", :phone_number => "254-595-5555", :admin => "t" )
+User.create(:email => "ceo@operationphantomsupport.com", :password => "volunteer", :first_name => "John", :last_name => "Valentine", :phone_number => "254-449-7441", :admin => "t" )

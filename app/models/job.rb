@@ -9,6 +9,10 @@ class Job < ActiveRecord::Base
     	"#{name.titleize}"
     end
     
+    def job_description
+    	"#{description.titleize}"
+    end
+    
     def tname
     "#{training.name.titleize}"
     end

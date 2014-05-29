@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     	"#{job.name.titleize}"
     end
     
+    def job_description
+    	"#{description.titleize}"
+    end
+    
     def tname
     	"#{training.name}"
     end

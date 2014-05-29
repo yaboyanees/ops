@@ -114,7 +114,7 @@ li a:hover {
 }
 
 #name, #email, #phone, #job, #personal, #date, #timecard, #jobindex, #jobindex, #newtraining, #newjob, 
-#orient, #trainingindex, #admin {
+#orient, #trainingindex, #admin, #contacts {
 	font: 35px "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	text-transform: lowercase;
 }

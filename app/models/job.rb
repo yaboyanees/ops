@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
 	has_many :users
 	belongs_to :training
 	
-    validates_presence_of :name, :description
+    validates_presence_of :name, :description, :training_id
 	
 	
 	def job_name
